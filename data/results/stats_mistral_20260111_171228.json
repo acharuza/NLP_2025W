@@ -1,0 +1,11 @@
+{
+    "model_name": "mistral",
+    "session_timestamp": "20260111_171228",
+    "total_prompts_processed": 160,
+    "timings": {
+        "total_inference_seconds": 901.01,
+        "total_evaluation_seconds": 863.01,
+        "average_inference_per_prompt": 5.6313,
+        "average_evaluation_per_prompt": 5.3938
+    }
+}

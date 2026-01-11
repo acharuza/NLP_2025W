@@ -1,0 +1,11 @@
+{
+    "model_name": "llama3.1",
+    "session_timestamp": "20260111_171228",
+    "total_prompts_processed": 160,
+    "timings": {
+        "total_inference_seconds": 871.51,
+        "total_evaluation_seconds": 865.78,
+        "average_inference_per_prompt": 5.4469,
+        "average_evaluation_per_prompt": 5.4111
+    }
+}
