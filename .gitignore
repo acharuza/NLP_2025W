@@ -5,4 +5,4 @@ __pycache__/
 Charuza_Kuśmierz_Sroczyk/prompt_injection/data/images/
 Charuza_Kuśmierz_Sroczyk/prompt_injection/data/*.json
 Charuza_Kuśmierz_Sroczyk/prompt_injection/prompt_injection_data.json
-!Charuza_Kuśmierz_Sroczyk/prompt_injection/data/results/*.json
+Charuza_Kuśmierz_Sroczyk/prompt_injection/data/results/*.json
