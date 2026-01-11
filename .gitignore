@@ -1,8 +1,8 @@
 .venv/
+.idea/
 __pycache__/
-.env
 *.pyc
-
-data/images/
-data/*.json
-prompt_injection_data.json
+Charuza_Kuśmierz_Sroczyk/prompt_injection/data/images/
+Charuza_Kuśmierz_Sroczyk/prompt_injection/data/*.json
+Charuza_Kuśmierz_Sroczyk/prompt_injection/prompt_injection_data.json
+!Charuza_Kuśmierz_Sroczyk/prompt_injection/data/results/*.json
