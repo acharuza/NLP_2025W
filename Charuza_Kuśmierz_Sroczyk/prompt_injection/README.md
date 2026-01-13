@@ -1,4 +1,4 @@
-# LLM Robustness Evaluation: Prompt Injection & Multimodal Attacks
+# LLM Evaluation: Prompt Injection
 
 ## Project Overview
 This project evaluates the robustness of open-source Large Language Models (LLMs) and Vision-Language Models (VLMs) against adversarial **Prompt Injection** attacks. 
