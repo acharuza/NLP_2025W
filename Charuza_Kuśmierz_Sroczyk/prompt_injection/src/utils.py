@@ -9,7 +9,7 @@ import logging
 
 def set_seed(seed: int):
     """
-    [Checklist 6.5] Sets seeds for all random number generators to ensure reproducibility.
+    Sets seeds for all random number generators to ensure reproducibility.
     """
     random.seed(seed)
     np.random.seed(seed)
@@ -24,7 +24,7 @@ def set_seed(seed: int):
 
 def log_system_info():
     """
-    [Checklist 6.6] Logs computing infrastructure details.
+    Logs computing infrastructure details.
     """
     logging.info("=== Reproducibility: System Information ===")
     logging.info(f"OS: {platform.system()} {platform.release()}")

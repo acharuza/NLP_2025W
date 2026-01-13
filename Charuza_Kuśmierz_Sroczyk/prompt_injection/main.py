@@ -128,11 +128,15 @@ def main():
                     "tested_model": model_name
                 })
 
+
+
         # --- 5. Save Report (Two Separate Files) ---
         os.makedirs(cfg['experiment']['output_dir'], exist_ok=True)
 
-        # File 1: Detailed Results (The dataset with answers)
-        results_filename = f"results_{model_name}_{session_timestamp}.json"
+
+        current_seed = cfg['experiment']['seed']
+
+        results_filename = f"results_{model_name}_seed{current_seed}_{session_timestamp}.json"
         results_path = os.path.join(cfg['experiment']['output_dir'], results_filename)
 
         with open(results_path, 'w', encoding='utf-8') as f:
@@ -144,18 +148,26 @@ def main():
         avg_eval = total_evaluation_time / num_prompts if num_prompts > 0 else 0
 
         stats_data = {
-            "model_name": model_name,
-            "session_timestamp": session_timestamp,
-            "total_prompts_processed": num_prompts,
-            "timings": {
-                "total_inference_seconds": round(total_inference_time, 2),
-                "total_evaluation_seconds": round(total_evaluation_time, 2),
-                "average_inference_per_prompt": round(avg_inf, 4),
-                "average_evaluation_per_prompt": round(avg_eval, 4)
-            }
-        }
+                    "model_name": model_name,
+                    "seed": current_seed,
+                    "session_timestamp": session_timestamp,
+                    "total_prompts_processed": num_prompts,
+                    "timings": {
+                        "total_inference_seconds": round(total_inference_time, 2),
+                        "total_evaluation_seconds": round(total_evaluation_time, 2),
+                        "average_inference_per_prompt": round(avg_inf, 4),
+                        "average_evaluation_per_prompt": round(avg_eval, 4)
+                    },
 
-        stats_filename = f"stats_{model_name}_{session_timestamp}.json"
+                    "generation_config": {
+                        "temperature": cfg['generation']['temperature'],
+                        "max_tokens": cfg['generation']['max_tokens'],
+                        "repetition_penalty": cfg['generation'].get('repetition_penalty', 1.1)
+                    }
+                }
+
+
+        stats_filename = f"stats_{model_name}_seed{current_seed}_{session_timestamp}.json"
         stats_path = os.path.join(cfg['experiment']['output_dir'], stats_filename)
 
         with open(stats_path, 'w', encoding='utf-8') as f:
