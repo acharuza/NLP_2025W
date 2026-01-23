@@ -18,23 +18,16 @@ class SimpleJudge(Judge):
     - score is always boolean and mirrors `equivalent`
     """
 
-    def compare(self, answers_a: List[str], answers_b: List[str], prompts: List[str]) -> JudgeResult:
-        if not (len(answers_a) == len(answers_b) == len(prompts)):
-            raise ValueError("Answer and prompt lists must be the same length")
+    def compare(self, answer_a: str, answer_b: str, prompt: str) -> bool:
+        na, nb = _normalize(answer_a), _normalize(answer_b)
+        if na == nb:
+            return True
+        else:
+            # very simple similarity: overlap of characters / max length
+            overlap = len(set(na) & set(nb))
+            denom = max(len(na), len(nb)) or 1
+            ratio = overlap / denom
+            return ratio >= 0.8
 
-        results: List[bool] = []
-
-        for a, b in zip(answers_a, answers_b):
-            na, nb = _normalize(a), _normalize(b)
-            if na == nb:
-                eq = True
-            else:
-                # very simple similarity: overlap of characters / max length
-                overlap = len(set(na) & set(nb))
-                denom = max(len(na), len(nb)) or 1
-                ratio = overlap / denom
-                eq = ratio >= 0.8
-
-            results.append(eq)
-
-        return JudgeResult(scores=results)
+    def compare_batch(self, answers_a: List[str], answers_b: List[str], prompts: List[str]) -> JudgeResult:
+        return super().compare_batch(answers_a, answers_b, prompts)

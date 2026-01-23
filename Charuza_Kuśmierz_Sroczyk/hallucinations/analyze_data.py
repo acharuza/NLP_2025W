@@ -4,9 +4,9 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # ================= CONFIGURATION =================
-INPUT_FILE = 'dataset_evaluation.json'
-OUT_IMG_1 = 'accuracy_by_category.png'
-OUT_IMG_2 = 'length_vs_score.png'
+INPUT_FILE = 'gpt5-wikipedia_dataset_evaluation.json'
+OUT_IMG_1 = 'gpt5_wiki_accuracy_by_category.png'
+OUT_IMG_2 = 'gpt5_wiki_length_vs_score.png'
 PLOT_STYLE = 'whitegrid'
 FIG_SIZE = (10, 5)
 # =================================================
@@ -14,9 +14,25 @@ FIG_SIZE = (10, 5)
 with open(INPUT_FILE) as f:
     df = pd.json_normalize(json.load(f)['results'])
 
-df['category'] = df['sample_id'].str.split('-').str[0]
+# Extract category from sample_id (e.g., 'neutral' from 'wiki-neutral-1')
+df['category'] = df['sample_id'].str.split('-').str[1]
+df.loc[df['category'].str.isdigit(), 'category'] = 'factual'
+print(df['category'])
 df['len'] = df['model_response'].str.len()
+
+# Handle potential None scores before converting to int
+df.dropna(subset=['score'], inplace=True)
 df['score'] = df['score'].astype(int)
+
+# Count failures by category
+failures_df = df[df['score'] == 0]
+failure_counts = failures_df['category'].value_counts()
+
+print("\n--- Failure Count by Category ---")
+print(failure_counts)
+print("---------------------------------\n")
+
+
 sns.set_theme(style=PLOT_STYLE)
 
 plt.figure(figsize=FIG_SIZE)

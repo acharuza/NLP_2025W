@@ -48,19 +48,13 @@ class LLMJudge(Judge):
         self.llm = LLMFactory.create(provider)
         self.max_retries = max_retries
 
-    def compare(self, answers_a: List[str], answers_b: List[str], prompts: List[str]) -> JudgeResult:
-        if not (len(answers_a) == len(answers_b) == len(prompts)):
-            raise ValueError("Answer and prompt lists must be the same length")
+    def compare(self, answer_a: str, answer_b: str, prompt: str) -> bool:
+        prompt_filled = _PROMPT_TEMPLATE.format(q=prompt, a=answer_a, b=answer_b)
+        for _ in range(self.max_retries + 1):
+            resp = self.llm.generate(prompt_filled)
+            if resp is not None and resp.strip():
+                return _parse_bool(resp)
+        return False
 
-        out: List[bool] = []
-        for a, b, p in zip(answers_a, answers_b, prompts):
-            prompt = _PROMPT_TEMPLATE.format(q=p, a=a, b=b)
-            result_bool = False
-            for _ in range(self.max_retries + 1):
-                resp = self.llm.generate(prompt)
-                result_bool = _parse_bool(resp)
-                if resp is not None and resp.strip():
-                    break
-            out.append(result_bool)
-
-        return JudgeResult(scores=out)
+    def compare_batch(self, answers_a: List[str], answers_b: List[str], prompts: List[str]) -> JudgeResult:
+        return super().compare_batch(answers_a, answers_b, prompts)

@@ -1,0 +1,474 @@
+{
+  "results": [
+    {
+      "sample_id": "wiki-1",
+      "prompt": "What was the population of Booroobin in the 2021 census?",
+      "expected_response": "258 people."
+    },
+    {
+      "sample_id": "wiki-3",
+      "prompt": "When did Richard D. Lawrence serve as Commanding General of the 1st Cavalry Division?",
+      "expected_response": "From 1980 to 1982."
+    },
+    {
+      "sample_id": "wiki-4",
+      "prompt": "When was Luccas Paraizo born?",
+      "expected_response": "5 July 2002."
+    },
+    {
+      "sample_id": "wiki-5",
+      "prompt": "Who described the species Neocollyris levigata and in what year?",
+      "expected_response": "It was described by Horn in 1894."
+    },
+    {
+      "sample_id": "wiki-7",
+      "prompt": "Why was Horace Hawkins expelled from the Socialist Party of Great Britain in 1905?",
+      "expected_response": "He was expelled for his personal harassment of Alexander Anderson."
+    },
+    {
+      "sample_id": "wiki-10",
+      "prompt": "Which club does Emilia Pelgander play for on loan, and from which club is she loaned?",
+      "expected_response": "She plays on loan for FC Rosengård, on loan from Leicester City."
+    },
+    {
+      "sample_id": "wiki-19",
+      "prompt": "What role has James C. Mullen held at Editas Medicine since 2018?",
+      "expected_response": "He has been the executive chairman of Editas Medicine since 2018."
+    },
+    {
+      "sample_id": "wiki-21",
+      "prompt": "In which regions is Nallachius americanus found?",
+      "expected_response": "It is found in the Caribbean Sea, North America, and South America."
+    },
+    {
+      "sample_id": "wiki-23",
+      "prompt": "How long did Eliza Buckley Ingalls serve as President of the St. Louis WCTU?",
+      "expected_response": "She served as President of the St. Louis WCTU for 27 years (1891–1918)."
+    },
+    {
+      "sample_id": "wiki-27",
+      "prompt": "Where was the poet Christopher Buckley born?",
+      "expected_response": "He was born in Arcata, California."
+    },
+    {
+      "sample_id": "wiki-29",
+      "prompt": "Why has Masire Kamara been called \"The tiny bride\" and why was her wedding notable?",
+      "expected_response": "She was nicknamed \"The tiny bride\" because of her small stature, and her marriage (a Christian marrying a Muslim) on May 1, 2009 in Freetown was a major national event in Sierra Leone."
+    },
+    {
+      "sample_id": "wiki-35",
+      "prompt": "In which Chinese provinces is the beetle Lemula pilifera found?",
+      "expected_response": "Lemula pilifera is found in Sichuan, Fujian, and Hubei provinces in China."
+    },
+    {
+      "sample_id": "wiki-36",
+      "prompt": "What notable behavior is exhibited by species in the genus Enewton?",
+      "expected_response": "Species in the genus Enewton are bioluminescent ostracods that perform stereotyped bioluminescent mating displays."
+    },
+    {
+      "sample_id": "wiki-37",
+      "prompt": "How long did the sidewheel passenger steamer Louise operate on the Chesapeake Bay?",
+      "expected_response": "Louise operated on the Chesapeake Bay for 40 years."
+    },
+    {
+      "sample_id": "wiki-40",
+      "prompt": "Who wrote the poem 'Burn Center' and in which poetry collection did it appear?",
+      "expected_response": "'Burn Center' was written by Sharon Olds and appears in her collection The Dead & The Living (published February 12, 1984); it was also published in Poetry in October 1981."
+    },
+    {
+      "sample_id": "wiki-41",
+      "prompt": "How long is Maacama Creek?",
+      "expected_response": "Maacama Creek is 7.3 miles (11.7 km) long."
+    },
+    {
+      "sample_id": "wiki-43",
+      "prompt": "Who currently represents Iowa's 79th House District?",
+      "expected_response": "Tracy Ehlert is the current representative of Iowa's 79th House District."
+    },
+    {
+      "sample_id": "wiki-44",
+      "prompt": "What religious qualification is required for the president of Central Philippine University?",
+      "expected_response": "The university requires the president to be of the Baptist or any Protestant denomination."
+    },
+    {
+      "sample_id": "wiki-46",
+      "prompt": "Who designed the space-cadet keyboard and in what year?",
+      "expected_response": "The space-cadet keyboard was designed by John L. Kulp in 1978."
+    },
+    {
+      "sample_id": "wiki-49",
+      "prompt": "Why did Craig West end his rugby career in 2009?",
+      "expected_response": "Craig West ended his rugby career in 2009 due to injury."
+    },
+    {
+      "sample_id": "wiki-50",
+      "prompt": "What was Great Plains' highest-charting single and what position did it reach on the Billboard country charts?",
+      "expected_response": "Their highest-charting single was \"Faster Gun,\" which peaked at No. 41."
+    },
+    {
+      "sample_id": "wiki-52",
+      "prompt": "How long is Utah State Route 29 and between which points does it run?",
+      "expected_response": "SR-29 runs 21.732 miles from the Sanpete–Emery County line near Joe's Valley Reservoir to State Route 10 three miles north of Castle Dale."
+    },
+    {
+      "sample_id": "wiki-53",
+      "prompt": "When was the Eisenach–Coburg section of the Eisenach–Lichtenfels railway formally opened?",
+      "expected_response": "The Eisenach–Coburg section was formally opened on 1 November 1858."
+    },
+    {
+      "sample_id": "wiki-55",
+      "prompt": "When and where was the short story \"Legions of the Dead\" first published?",
+      "expected_response": "\"Legions of the Dead\" was first published by Bantam Books in the paperback collection Conan the Swordsman in August 1978."
+    },
+    {
+      "sample_id": "wiki-58",
+      "prompt": "Who led the team that produced the Alicante Innovation + Territory report and which philosophy inspired its proposals?",
+      "expected_response": "The team was led by architect Alfonso Vegara and was inspired by the \"Smart Places\" philosophy."
+    },
+    {
+      "sample_id": "wiki-62",
+      "prompt": "Where and when was the 2007 Asian Women's Junior Handball Championship held?",
+      "expected_response": "It took place in Almaty from 1 July to 7 July 2007."
+    },
+    {
+      "sample_id": "wiki-65",
+      "prompt": "What was the population and area of Şemdinli District as of 2023?",
+      "expected_response": "The district had a population of 44,742 in 2023 and an area of 1,209 km²."
+    },
+    {
+      "sample_id": "wiki-66",
+      "prompt": "What key contribution did Sir Frederick William Andrewes make to bacteriology?",
+      "expected_response": "He, with Horder, was first to classify streptococci into three main groups: pyogenes (haemolyticus), salivarius (viridans), and faecalis (enterococcus)."
+    },
+    {
+      "sample_id": "wiki-67",
+      "prompt": "What is the recording Black Drama and who are the two artists featured on it?",
+      "expected_response": "Black Drama is a two-track American spoken word record issued by Smithsonian Folkways in 1973 featuring autobiographical accounts by Barbara Ann Teer and Charlie L. Russell."
+    },
+    {
+      "sample_id": "wiki-69",
+      "prompt": "Who was Jabbar Gasimov and what were his birth and death dates?",
+      "expected_response": "Jabbar Gasimov was an Azerbaijani poster artist and People's Artist of Azerbaijan, born 9 February 1935 and died 19 October 2002."
+    },
+    {
+      "sample_id": "wiki-70",
+      "prompt": "What position did Chaophraya Chakri (Mud) hold under King Taksin and what was his ethnic background?",
+      "expected_response": "He served as Samuha Nayok (Prime Minister) of Siam under King Taksin and was of Muslim Persian-Malay descent, a descendant of Sultan Suleiman of Singora."
+    },
+    {
+      "sample_id": "wiki-74",
+      "prompt": "Who described the genus and species Chironeura chrysocyma and in what year?",
+      "expected_response": "Alexey Diakonoff described the genus and species in 1954."
+    },
+    {
+      "sample_id": "wiki-83",
+      "prompt": "According to the federal gazette issued on 31 October 2022, into how many polling districts is the Padang Rengas constituency divided?",
+      "expected_response": "Padang Rengas is divided into 31 polling districts."
+    },
+    {
+      "sample_id": "wiki-84",
+      "prompt": "As of 2017, how many species are contained in the spider genus Platnickia?",
+      "expected_response": "As of 2017, Platnickia contains five South American species."
+    },
+    {
+      "sample_id": "wiki-89",
+      "prompt": "When did Michael Clarkson make his debut for Featherstone Rovers?",
+      "expected_response": "He made his debut for Featherstone Rovers on Tuesday, 5 May 1998."
+    },
+    {
+      "sample_id": "wiki-90",
+      "prompt": "Which team does Niklas Appelgren currently represent in the Liiga?",
+      "expected_response": "Niklas Appelgren currently represents Saimaan Pallo in the Liiga."
+    },
+    {
+      "sample_id": "wiki-93",
+      "prompt": "Who designed the winning padstool (fietspaddenstoel) signage prototype first installed in 1919?",
+      "expected_response": "Johannes Hendrik Willem Leliman, a house architect from Baarn."
+    },
+    {
+      "sample_id": "wiki-95",
+      "prompt": "When did Dartmouth College end use of the BlitzMail system?",
+      "expected_response": "Use of BlitzMail ended in 2011."
+    },
+    {
+      "sample_id": "wiki-99",
+      "prompt": "How many Tselina SIGINT satellites were launched in total?",
+      "expected_response": "A total of 130 Tselina satellites were launched."
+    },
+    {
+      "sample_id": "wiki-insufficient-3",
+      "prompt": "Was the Battle of Haynau a decisive turning point in the 1813 campaign?",
+      "expected_response": "Whether a battle is considered a 'decisive turning point' depends on the historical perspective, criteria used (strategic, political, morale), and the broader campaign timeline. The article gives the battle date and outcome but does not provide enough context or analysis to determine if historians view it as a turning point."
+    },
+    {
+      "sample_id": "wiki-insufficient-9",
+      "prompt": "Did Los Angeles FC perform better in 2021 than in the previous season?",
+      "expected_response": "‘Perform better’ needs a defined metric (points, position, goals, trophies) and the previous season's corresponding data. The snippet only states that 2021 was the club's fourth season and gives no comparative statistics, so no definitive answer can be given from this text alone."
+    },
+    {
+      "sample_id": "wiki-insufficient-23",
+      "prompt": "Did the 2009–10 RPI Engineers women's ice hockey team qualify for the national tournament that season?",
+      "expected_response": "The article lists records and some statistics from that season but does not state whether they qualified for any national tournament or postseason; that specific outcome is not provided."
+    },
+    {
+      "sample_id": "wiki-insufficient-34",
+      "prompt": "Did Mike Maples Sr.'s introduction of autonomous product units at Microsoft lead to a permanent company-wide organizational change?",
+      "expected_response": "The article states he \"was known for introducing the concept of autonomous product units\" and that he retired in 1995, but it does not say whether the concept was adopted permanently, how broadly it was applied across Microsoft, or over what time frame. Answering this requires more detailed historical organizational records and a definition of \"permanent\" and \"company-wide,\" none of which are provided here."
+    },
+    {
+      "sample_id": "wiki-insufficient-37",
+      "prompt": "Would William Goulding have still won the 1876 Cork City by-election if the Home Rule vote had not been split?",
+      "expected_response": "This is a counterfactual question. The article reports that Goulding won because the Home Rule vote was split, but it does not provide vote totals, margins, voter preferences, or any modeling of how votes would have redistributed under a single Home Rule candidate. Without specific electoral data and assumptions about voter behavior, the hypothetical outcome cannot be determined from the provided text."
+    },
+    {
+      "sample_id": "wiki-insufficient-38",
+      "prompt": "Which editor of Secession had the most influence on selecting contributors like E. E. Cummings and Marianne Moore?",
+      "expected_response": "The article lists Gorham Munson, Matthew Josephson, and Kenneth Burke as editors and names contributors the magazine helped further, but it does not attribute editorial decisions or influence to any one editor nor document who selected which contributors. Establishing \"most influence\" would require internal editorial correspondence, meeting notes, or firsthand accounts, none of which are in the excerpt."
+    },
+    {
+      "sample_id": "wiki-insufficient-44",
+      "prompt": "Was Michael Tierney popular with students during his presidency at University College Dublin?",
+      "expected_response": "Unanswerable because 'popular' is subjective and the article does not provide surveys, contemporary accounts, or measures of student opinion during his presidency (1947–1964). Popularity can vary over time and among different student groups, so more specific evidence would be needed."
+    },
+    {
+      "sample_id": "wiki-insufficient-46",
+      "prompt": "Is Robinzon Díaz currently employed by a Major League Baseball team?",
+      "expected_response": "Unanswerable because the article only documents roles up to 2020 (bullpen catcher for the Brewers through 2020) and does not state his present employment. 'Currently' requires a reference date and up-to-date employment information that is not provided."
+    },
+    {
+      "sample_id": "wiki-insufficient-49",
+      "prompt": "Was Bob McNair's net worth higher at the time he founded the Houston Texans than at his death?",
+      "expected_response": "Unanswerable from the provided text because no net-worth figures or dates of wealth valuations are given. Comparing wealth at two different times requires specific financial data for those times, which the article does not supply."
+    },
+    {
+      "sample_id": "wiki-insufficient-51",
+      "prompt": "Was Blencoe’s challenge to the delay in the Human Rights Commission hearings ultimately successful?",
+      "expected_response": "Unanswerable from the provided text because the article only outlines the delay and that Blencoe challenged it; it does not state the outcome of the court proceedings or the remedy (if any). Determining success would require the final decision or ruling, which is not included here."
+    },
+    {
+      "sample_id": "wiki-insufficient-56",
+      "prompt": "Does OGRA regulate the retail price of gasoline nationwide in Pakistan right now?",
+      "expected_response": "Unanswerable from the provided text because the article describes OGRA's general regulatory remit over oil and gas but does not specify the exact powers, temporal scope, or current regulatory framework for retail gasoline pricing across the entire country. Legal authority and policy can change over time and may vary by fuel type and region."
+    },
+    {
+      "sample_id": "wiki-insufficient-60",
+      "prompt": "Did Sylvester H. Roper die as a result of testing one of his motorcycles?",
+      "expected_response": "Unanswerable from the provided excerpt because, although the article gives Roper's birth and death dates and summarizes his inventions, it does not state the cause or circumstances of his death. Determining whether his death was related to testing a motorcycle requires additional biographical or historical detail not included here."
+    },
+    {
+      "sample_id": "wiki-insufficient-73",
+      "prompt": "Can the Conference of Presidents veto legislation in the Hellenic Parliament?",
+      "expected_response": "Unanswerable as posed: the article summarizes the Conference's role but does not specify its exact legal powers or any ability to 'veto' legislation. Determining that would require the relevant constitutional or standing orders text and definitions of what counts as a 'veto.'"
+    },
+    {
+      "sample_id": "wiki-insufficient-75",
+      "prompt": "Which film in the True Grit series is the most critically acclaimed?",
+      "expected_response": "Unanswerable as posed: 'most critically acclaimed' requires defining the metric (reviews, awards, aggregate scores) and a time frame. The article gives general reception summaries for some installments but no comprehensive or quantified critical rankings."
+    },
+    {
+      "sample_id": "wiki-insufficient-81",
+      "prompt": "Would Graeme Schultz be considered one of Essendon's greatest forwards?",
+      "expected_response": "This is unanswerable from the supplied text because 'greatest' is a subjective term that requires a clear definition and criteria (e.g., goals, games, awards, impact) and a comparison with other players across different eras. The article gives a few statistics and achievements but not the comparative data or the evaluation criteria needed to make that judgment."
+    },
+    {
+      "sample_id": "wiki-insufficient-89",
+      "prompt": "Was FringeWare Review more influential than Wired in shaping cyberculture of the 1990s?",
+      "expected_response": "This is unanswerable as stated because 'influential' is subjective and comparative, and the article provides only basic facts about FringeWare Review (dates, connections). To determine relative influence you would need defined criteria, metrics (circulation, citations, cultural impact studies), and broader context about Wired and other publications—none of which are provided here."
+    },
+    {
+      "sample_id": "wiki-insufficient-93",
+      "prompt": "Would viewers today prefer Breakfast Time to contemporary UK breakfast television programmes?",
+      "expected_response": "Unanswerable as stated: audience preferences vary by demographic, era, and personal taste. The article describes Breakfast Time's style and its broadcast dates but provides no contemporary audience research or a definition of 'prefer,' so you cannot answer without current viewer data and a specified comparison."
+    },
+    {
+      "sample_id": "wiki-insufficient-95",
+      "prompt": "Is Juliana Silveira more successful as an actress or as a singer?",
+      "expected_response": "The question is ambiguous and unanswerable from the article because 'more successful' needs a concrete metric (e.g., record sales, box-office, awards, public recognition) and a time or geographic scope. The short biography mentions roles and recordings but lacks comparative success data."
+    },
+    {
+      "sample_id": "wiki-insufficient-98",
+      "prompt": "Is Hugo Jamioy Juagibioy considered the leading contemporary poet of the Kamëntsa people?",
+      "expected_response": "This cannot be established from the article alone because 'leading' is subjective and requires criteria (literary influence, awards, readership, critical consensus) and a cultural context. The article lists some achievements but gives no comparative evaluation or consensus among critics or the community."
+    },
+    {
+      "sample_id": "wiki-tricky-2",
+      "prompt": "In what year did Wink Davenport found the Santa Monica Volleyball Club?",
+      "expected_response": "He did not found the Santa Monica Volleyball Club. Wink Davenport moved to Santa Monica and joined the Santa Monica Volleyball club in 1966; the article does not state he founded it."
+    },
+    {
+      "sample_id": "wiki-tricky-3",
+      "prompt": "Why did Haskins Montgomery resign from the Mississippi Senate in 2014?",
+      "expected_response": "He did not resign in 2014. Haskins Montgomery served in the Mississippi Senate from 2008 to 2016 and decided not to run for re-election in 2015, completing his term in 2016."
+    },
+    {
+      "sample_id": "wiki-tricky-8",
+      "prompt": "Why was Sir Ralph Champneys Williams appointed a CMG in the 1898 New Year Honours?",
+      "expected_response": "The date is incorrect: Williams was appointed a Companion of the Order of St Michael and St George (CMG) in the 1901 New Year Honours, not in 1898."
+    },
+    {
+      "sample_id": "wiki-tricky-15",
+      "prompt": "In which year did John Hunter unseat Arthur Maloney to become the MP for Parkdale?",
+      "expected_response": "Entity swap — John Hunter unseated Harold Timmins in 1949. Arthur Maloney later defeated Hunter in the 1957 election."
+    },
+    {
+      "sample_id": "wiki-tricky-19",
+      "prompt": "Which students enrolled at the East Carolina University–Bonn (Haus Steineck) program in 1980?",
+      "expected_response": "Impossible constraint — the ECU–Bonn (Haus Steineck) experimental program operated only between 1971 and 1973, so there were no enrollments in 1980."
+    },
+    {
+      "sample_id": "wiki-tricky-25",
+      "prompt": "Why did the Singicherra massacre occur on 13 January 2005?",
+      "expected_response": "That premise is incorrect about the date: the Singicherra massacre occurred on 13 January 2002, when attackers from the National Liberation Front of Tripura killed 16 unarmed Bengali Hindu villagers and injured others at the Singicherra market."
+    },
+    {
+      "sample_id": "wiki-tricky-26",
+      "prompt": "Which city in Kenya was Colin Eaborn born in?",
+      "expected_response": "That premise is false — Colin Eaborn was not born in Kenya. He was British (born 15 March 1923) and his family moved to Wales when he was six months old; the article does not state any Kenyan birthplace."
+    },
+    {
+      "sample_id": "wiki-tricky-27",
+      "prompt": "Does National Highway 151A start at the Maliya junction of NH27 in Morbi district?",
+      "expected_response": "No. That swaps the endpoints. NH-151A starts at National Highway 51 (Karungaa Chokdi) in Dwarka and finishes at the Maliya junction of NH27 in Morbi district, Gujarat."
+    },
+    {
+      "sample_id": "wiki-tricky-28",
+      "prompt": "Why did Folk Soul Revival announce the end of their journey together in 2018?",
+      "expected_response": "The date is incorrect — Folk Soul Revival announced the end of their journey together in 2021, not 2018."
+    },
+    {
+      "sample_id": "wiki-tricky-31",
+      "prompt": "In which city in Kenya was Luigi Clerichetti born?",
+      "expected_response": "He was a 19th-century Milanese architect — Italian and associated with Milan, not born in any Kenyan city."
+    },
+    {
+      "sample_id": "wiki-tricky-38",
+      "prompt": "Why did Ukrainian Choice disband in 2011 after failing to attract members?",
+      "expected_response": "That date is wrong — Ukrainian Choice was founded in April 2012 (so it could not have disbanded in 2011); it was later renamed in 2016 and its leaders were detained after the 2022 invasion."
+    },
+    {
+      "sample_id": "wiki-tricky-39",
+      "prompt": "How many goals did Horrie Dawson kick for Collingwood in 1932?",
+      "expected_response": "That swaps the club — Horrie Dawson played for Fitzroy, not Collingwood; he kicked 21 goals in 1932 for Fitzroy (the club's second leading goal-kicker that year)."
+    },
+    {
+      "sample_id": "wiki-tricky-40",
+      "prompt": "Name a Tolman Medal recipient who accomplished the majority of their work while living outside Southern California.",
+      "expected_response": "That is impossible under the award's rules — eligibility requires the recipient to have accomplished the majority of their work while resident in Southern California, so recipients by definition did their majority work in Southern California."
+    },
+    {
+      "sample_id": "wiki-tricky-42",
+      "prompt": "Which country did the Texas Ranger Division serve as the official national police force for during the 1840s?",
+      "expected_response": "They did not serve as an official national police force. During the 19th century the Rangers were an irregular frontier force in Texas (initially in the period when Texas was part of Mexico, then the Republic of Texas and later the U.S. state) created to protect settlers — not a formal national police."
+    },
+    {
+      "sample_id": "wiki-tricky-46",
+      "prompt": "Which city in Kenya was Eden Zanker born in?",
+      "expected_response": "The premise is false — Eden Zanker is Australian (born 11 November 1999) and is not described as being born in Kenya; she is an AFLW player for Fremantle."
+    },
+    {
+      "sample_id": "wiki-tricky-48",
+      "prompt": "Why did Joseph Moïse Agbodjélou join the French Army in 1945?",
+      "expected_response": "The date is wrong — Agbodjélou served in the French Army in 1935, and it was while serving in 1935 that he took an interest in photography."
+    },
+    {
+      "sample_id": "wiki-tricky-52",
+      "prompt": "Why did principal photography for the film Merv begin in April 2023 in Wilmington, North Carolina?",
+      "expected_response": "The date in the question is wrong: principal photography for Merv began in April 2024 in Wilmington, North Carolina and wrapped in June 2024."
+    },
+    {
+      "sample_id": "wiki-tricky-53",
+      "prompt": "Which horse did LaVerne Sewell ride to win the 1910 Kentucky Derby?",
+      "expected_response": "Impossible: LaVerne Sewell died in November 1906 at age 18, so he could not have ridden in or won the 1910 Kentucky Derby. In his short career he won stakes such as the Fashion Stakes (riding Court Dress)."
+    },
+    {
+      "sample_id": "wiki-tricky-54",
+      "prompt": "Why did the 2016 census record Sukhteh Kuh's population as 260 people when it was 340 in 2006?",
+      "expected_response": "The figures are conflated: the 2006 census recorded 340 people, the 2011 census recorded 260 people, and the 2016 census recorded 271 people. So 260 was the 2011 count, not 2016."
+    },
+    {
+      "sample_id": "wiki-tricky-59",
+      "prompt": "Which record label released Live over Europe 2007 in Asia on 15 November 2007?",
+      "expected_response": "That premise is false — Live over Europe 2007 was released in North America by Atlantic Records on 20 November 2007 and in Europe by Virgin Records on 26 November 2007; there is no record of a 15 November 2007 Asia release as stated."
+    },
+    {
+      "sample_id": "wiki-tricky-60",
+      "prompt": "Why did Calvin Brainerd Cady study music in Leipzig from 1882 to 1884?",
+      "expected_response": "That date is incorrect — Cady studied in Leipzig from 1872 to 1874 (studying organ under Benjamin Robert Papperitz and harmony, counterpoint and pianoforte under teachers such as Ernst Richter and Oscar Paul)."
+    },
+    {
+      "sample_id": "wiki-tricky-61",
+      "prompt": "In which province of Pakistan is the village of Thoran located?",
+      "expected_response": "Thoran is not in Pakistan; it is a village in India, located in Mawal taluka of Pune district in the state of Maharashtra."
+    },
+    {
+      "sample_id": "wiki-tricky-63",
+      "prompt": "Why did Mula Mustafa Bašeskija leave Sarajevo on 1 July 1785?",
+      "expected_response": "He did not leave Sarajevo on 1 July 1785. Bašeskija left Sarajevo on 1 July 1781 to move with his family to the village of Zgošća near Kakanj, returning to Sarajevo in February 1782."
+    },
+    {
+      "sample_id": "wiki-tricky-64",
+      "prompt": "In what year was Telmatobius peruvianus declared extinct?",
+      "expected_response": "It has not been declared extinct. Telmatobius peruvianus is currently classified as vulnerable to extinction and is known from Andean highlands in southeastern Peru and far northern Chile."
+    },
+    {
+      "sample_id": "wiki-tricky-67",
+      "prompt": "Which rival family house is listed as a notable political party in the timeline of rival political parties?",
+      "expected_response": "I can't answer that because the premise is incorrect: the article lists rival political parties (and rival political alliances), and explicitly says not to confuse those with rival family houses. No rival family houses are listed."
+    },
+    {
+      "sample_id": "wiki-tricky-72",
+      "prompt": "Which country did Harcourt Caughey represent when he played for the England national rugby union team?",
+      "expected_response": "The question swaps entities. Harcourt Caughey represented New Zealand — he was an All Black (played for New Zealand) from 1932 to 1937 and was born in Auckland."
+    },
+    {
+      "sample_id": "wiki-tricky-78",
+      "prompt": "Why did Mark Stephney make his Twenty20 debut for Montserrat in the 2005 Stanford 20/20?",
+      "expected_response": "The date is incorrect — Stephney's Twenty20 debut for Montserrat was in the 2006 Stanford 20/20, when he scored an unbeaten 21 in Montserrat's first-round match against Guyana."
+    },
+    {
+      "sample_id": "wiki-tricky-79",
+      "prompt": "After which husband did Adelaide of Poland serve as queen, and in which years did she reign?",
+      "expected_response": "That contains an impossible assumption — Adelaide of Poland never married and did not reign as queen. She became a nun, founded the Convent of St. James in Sandomierz, and died in 1211."
+    },
+    {
+      "sample_id": "wiki-tricky-81",
+      "prompt": "In which French city is the Canadian Institute of Gemmology headquartered?",
+      "expected_response": "That premise is false: the Canadian Institute of Gemmology is based in British Columbia, Canada (the article does not place it in any French city and does not give a specific city name)."
+    },
+    {
+      "sample_id": "wiki-tricky-82",
+      "prompt": "Why was the diocese of Paris elevated to its current status in 1625?",
+      "expected_response": "The premise is incorrect: the diocese was elevated to its current status in 1622, not 1625."
+    },
+    {
+      "sample_id": "wiki-tricky-86",
+      "prompt": "Which city in Kenya was Tosh Basco born in?",
+      "expected_response": "Tosh Basco was born in Sacramento, California — not in Kenya."
+    },
+    {
+      "sample_id": "wiki-tricky-87",
+      "prompt": "Why was the Governor L. D. Lewelling House added to the National Register of Historic Places in 2010?",
+      "expected_response": "It was listed on the National Register of Historic Places on June 8, 2005, not in 2010."
+    },
+    {
+      "sample_id": "wiki-tricky-88",
+      "prompt": "Which address did Marie-Élisabeth Ozanne's brother Nicolas Ozanne register her death at?",
+      "expected_response": "Her death was registered by her brother-in-law Jean-Pierre Moreau, at 105 rue de la Tixeranderie in Paris — not by her brother Nicolas Ozanne."
+    },
+    {
+      "sample_id": "wiki-tricky-90",
+      "prompt": "Why was the neutral territory awarded to Brazil in 1905 instead of 1900?",
+      "expected_response": "The territory was awarded to Brazil in 1900, not 1905."
+    },
+    {
+      "sample_id": "wiki-tricky-95",
+      "prompt": "Why was Nickel Plate Road No. 765 added to the National Register of Historic Places in 1990?",
+      "expected_response": "That date is incorrect — No. 765 was added to the National Register of Historic Places on September 12, 1996."
+    },
+    {
+      "sample_id": "wiki-tricky-100",
+      "prompt": "Why was the CSS Peedee scuttled in December 1865 after its final engagement?",
+      "expected_response": "That's incorrect — the CSS Peedee was launched in January 1865 and was scuttled in mid-February 1865 after an upriver skirmish; it was not scuttled in December 1865."
+    }
+  ]
+}
