@@ -6,11 +6,13 @@ from evaluation.schemas import EvaluationResultItem, EvaluationOutput
 import math
 
 # --- Configuration ---
-MODELS = ['gpt-5']
-JUDGE_CONFIG = {"type": "llm", "provider": "gpt-5"}
-DATA_CONFIG = {"type": "jsonl", "data_dir": "wikipedia_data"}
-OUTPUT_FILE = "gpt5-wikipedia_dataset_evaluation.json"
-BATCH_SIZE = 50
+MODELS = ['gpt-5-mini']
+JUDGE_CONFIG = {"type": "llm", "provider": "gpt-5-mini"}
+DATA_CONFIG = {"type": "jsonl", "data_dir": "wikipedia_data2"}
+# DATA_CONFIG = {"type": "jsonl", "data_dir": "dummy_data"}
+OUTPUT_FILE = "gpt-5-mini-wikipedia_dataset2_evaluation.json"
+# OUTPUT_FILE = "dummy_evaluation.json"
+BATCH_SIZE = 96
 # ---------------------
 
 def main():

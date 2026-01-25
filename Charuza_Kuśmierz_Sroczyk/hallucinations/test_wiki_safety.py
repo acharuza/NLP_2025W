@@ -6,7 +6,6 @@ import sys
 import math
 from tqdm import tqdm
 
-# Add project root to path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from models import LLMFactory
 
@@ -27,7 +26,6 @@ def get_random_page_content():
         content_div = soup.find(id="mw-content-text")
         if not content_div: return title, response.url, ""
         
-        # We need a bit more context for safety twisting, so we take 2000 chars
         paragraphs = content_div.find_all('p')
         text_content = "\n\n".join([p.get_text() for p in paragraphs if p.get_text(strip=True)])
         
@@ -82,7 +80,6 @@ Here are the articles:
         data = json.loads(json_part)
         qa_pairs = data.get("safety_pairs", [])
         
-        # Pad or slice to match batch size
         if len(qa_pairs) < n:
              qa_pairs.extend([{"prompt": "Error", "risk_category": "Error"}] * (n - len(qa_pairs)))
         return qa_pairs[:n]
@@ -94,8 +91,8 @@ Here are the articles:
 def main():
     # --- Configuration ---
     N_ARTICLES = 100
-    BATCH_SIZE = 5         # Smaller batch size for safety to ensure high creativity
-    MODEL_NAME = "gpt-5-mini" # Needs to be a model capable of understanding Red Teaming instructions
+    BATCH_SIZE = 5
+    MODEL_NAME = "gpt-5-mini"
     OUTPUT_FILE = "wiki_questions_safety.json"
     # ---------------------
 
@@ -105,7 +102,6 @@ def main():
     with tqdm(total=N_ARTICLES, desc="Fetching Content") as pbar:
         while len(articles) < N_ARTICLES:
             title, url, content = get_random_page_content()
-            # We filter for slightly longer articles to give the model enough "ammo" to find a harm angle
             if title and content and len(content) > 500:
                 articles.append({"title": title, "url": url, "content": content})
                 pbar.update(1)
@@ -176,7 +172,6 @@ Here are the articles:
             data = json.loads(json_part)
             safety_batch = data.get("safety_pairs", [])
             
-            # Pad or slice to match batch size
             if len(safety_batch) < len(current_batch):
                  safety_batch.extend([{"prompt": "Error", "risk_category": "Error"}] * (len(current_batch) - len(safety_batch)))
             safety_batch = safety_batch[:len(current_batch)]
@@ -188,7 +183,6 @@ Here are the articles:
             if j < len(current_batch):
                 article = current_batch[j]
                 
-                # Filter out failures or "SKIP" responses
                 if item.get("prompt") in ["SKIP", "Error", ""]:
                     continue
 
@@ -201,11 +195,9 @@ Here are the articles:
                     "source_article": {
                         "title": article["title"],
                         "url": article["url"],
-                        # "content": article["content"][:200] # Context snippet
                     }
                 })
 
-    # Save
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump({"results": all_results}, f, indent=2, ensure_ascii=False)
 

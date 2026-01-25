@@ -48,6 +48,16 @@ uv run python evaluate.py
 
 This will run the models against the dataset and save the results in `dataset_evaluation.json`.
 
+### Evaluating Pre-existing Results
+
+If you have model outputs in `.jsonl` files (like in `final_llava_text/`), you can evaluate them without re-running the models.
+
+```bash
+uv run python evaluate_results.py
+```
+
+This script reads responses from `.jsonl` files, uses a judge to score them, and saves the output to `llava_evaluation.json`.
+
 ## Generating Charts
 
 After the experiment has finished, you can generate charts from the results.
@@ -59,3 +69,6 @@ uv run python analyze_data.py
 This script reads `dataset_evaluation.json` and creates two plots:
 *   `accuracy_by_category.png`
 *   `length_vs_score.png`
+
+# Data
+Dataset data or intermediate result data(including final benchmark dataset) is available on: <https://drive.google.com/drive/folders/1JlkvVn-oX4DCk52LMqPMNezpC498kB_u?usp=sharing>

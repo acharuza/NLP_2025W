@@ -6,7 +6,6 @@ import sys
 import math
 from tqdm import tqdm
 
-# Add project root to path to allow imports from other modules
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from models import LLMFactory
 
@@ -34,7 +33,6 @@ def get_random_page_content():
         paragraphs = content_div.find_all('p')
         text_content = "\n\n".join([p.get_text() for p in paragraphs if p.get_text(strip=True)])
         
-        # Optional: Truncate very long articles to save tokens (e.g. first 4000 chars)
         return title, response.url, text_content[:4000]
 
     except requests.exceptions.RequestException as e:
@@ -75,7 +73,6 @@ Here are the articles:
 
     try:
         response_text = model.generate(prompt)
-        # Robust JSON extraction
         start_idx = response_text.find('{')
         end_idx = response_text.rfind('}') + 1
         
@@ -86,10 +83,8 @@ Here are the articles:
         data = json.loads(json_part)
         qa_pairs = data.get("qa_pairs", [])
         
-        # Validate count to ensure alignment
         if len(qa_pairs) != n:
             print(f"Warning: Batch size mismatch. Expected {n}, got {len(qa_pairs)}. Padding with blanks.")
-            # Pad or truncate to match exactly
             if len(qa_pairs) < n:
                 qa_pairs.extend([{"question": "Error generation", "answer": "Error"}] * (n - len(qa_pairs)))
             else:
@@ -99,13 +94,12 @@ Here are the articles:
 
     except Exception as e:
         print(f"Error processing batch: {e}")
-        # Return empty placeholders so we don't crash the loop or misalign indices
         return [{"question": "Error", "answer": "Error"}] * n
 
 def main():
     # --- Configuration ---
     N_ARTICLES = 100
-    BATCH_SIZE = 10         # Process 10 articles at a time
+    BATCH_SIZE = 10
     MODEL_NAME = "gpt-5-mini"
     OUTPUT_FILE = "wiki_questions_factual.json"
     # ---------------------
@@ -113,11 +107,10 @@ def main():
     print(f"Fetching {N_ARTICLES} random Wikipedia articles...")
     articles = []
     
-    # We use a while loop to ensure we get exactly N valid articles
     with tqdm(total=N_ARTICLES, desc="Fetching articles") as pbar:
         while len(articles) < N_ARTICLES:
             title, url, content = get_random_page_content()
-            if title and content and len(content) > 200: # Simple filter for empty/stub pages
+            if title and content and len(content) > 200:
                 articles.append({"title": title, "url": url, "content": content})
                 pbar.update(1)
 
@@ -132,7 +125,6 @@ def main():
     
     all_results = []
     
-    # Calculate number of batches needed
     num_batches = math.ceil(len(articles) / BATCH_SIZE)
     
     prompts = []
@@ -172,13 +164,11 @@ Here are the articles:
     batch_responses = model.generate_batch(prompts)
 
     for i, response_text in enumerate(batch_responses):
-        # Slice the articles list to get the current batch
         start_idx = i * BATCH_SIZE
         end_idx = start_idx + BATCH_SIZE
         current_batch = articles[start_idx:end_idx]
         
         try:
-            # Robust JSON extraction
             start_json_idx = response_text.find('{')
             end_json_idx = response_text.rfind('}') + 1
             
@@ -189,7 +179,6 @@ Here are the articles:
             data = json.loads(json_part)
             batch_qa_pairs = data.get("qa_pairs", [])
             
-            # Validate count to ensure alignment
             if len(batch_qa_pairs) != len(current_batch):
                 print(f"Warning: Batch size mismatch. Expected {len(current_batch)}, got {len(batch_qa_pairs)}. Padding with blanks.")
                 if len(batch_qa_pairs) < len(current_batch):
@@ -200,27 +189,22 @@ Here are the articles:
             print(f"Error processing batch response: {e}")
             batch_qa_pairs = [{"question": "Error", "answer": "Error"}] * len(current_batch)
 
-        # Combine article data with generated Q&A
         for j, qa in enumerate(batch_qa_pairs):
-            # Calculate the global index
             global_idx = start_idx + j
             
-            # Safety check in case batch returns weird lengths
             if j < len(current_batch):
                 article = current_batch[j]
                 all_results.append({
-                    "id": f"wiki-{global_idx+1}",
+                    "id": f"wiki-factual-{global_idx+1}",
                     "category": "wiki_factual",
                     "prompt": qa.get("question", ""),
                     "expected_response": qa.get("answer", ""),
                     "source_article": {
                         "title": article["title"],
                         "url": article["url"],
-                        # "content": article["content"] # Uncomment if you want full text in JSON
                     }
                 })
 
-    # Save final results
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump({"results": all_results}, f, indent=2, ensure_ascii=False)
 

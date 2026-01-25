@@ -6,7 +6,6 @@ import sys
 import math
 from tqdm import tqdm
 
-# Add project root to path to allow imports from other modules
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from models import LLMFactory
 
@@ -34,7 +33,6 @@ def get_random_page_content():
         paragraphs = content_div.find_all('p')
         text_content = "\n\n".join([p.get_text() for p in paragraphs if p.get_text(strip=True)])
         
-        # Truncate to save tokens, but keep enough for context
         return title, response.url, text_content[:4000]
 
     except requests.exceptions.RequestException as e:
@@ -87,9 +85,7 @@ Here are the articles:
         data = json.loads(json_part)
         qa_pairs = data.get("qa_pairs", [])
         
-        # Validate and Pad if necessary
         if len(qa_pairs) != n:
-             # If model returned wrong number, pad or slice
             if len(qa_pairs) < n:
                  qa_pairs.extend([{"question": "Error generation", "answer": "Error"}] * (n - len(qa_pairs)))
             else:
@@ -115,7 +111,6 @@ def main():
     with tqdm(total=N_ARTICLES, desc="Fetching Content") as pbar:
         while len(articles) < N_ARTICLES:
             title, url, content = get_random_page_content()
-            # Ensure article has enough content to form a basis for ambiguity
             if title and content and len(content) > 300:
                 articles.append({"title": title, "url": url, "content": content})
                 pbar.update(1)
@@ -186,7 +181,6 @@ Here are the articles:
             data = json.loads(json_part)
             qa_batch = data.get("qa_pairs", [])
             
-            # Validate and Pad if necessary
             if len(qa_batch) != len(current_batch):
                 if len(qa_batch) < len(current_batch):
                      qa_batch.extend([{"question": "Error generation", "answer": "Error"}] * (len(current_batch) - len(qa_batch)))
@@ -196,7 +190,6 @@ Here are the articles:
             print(f"\nError processing batch response: {e}")
             qa_batch = [{"question": "Error", "answer": "Error"}] * len(current_batch)
         
-        # Align results
         for j, qa in enumerate(qa_batch):
             if j < len(current_batch):
                 article = current_batch[j]
@@ -208,7 +201,6 @@ Here are the articles:
                     "source_article": {
                         "title": article["title"],
                         "url": article["url"],
-                        # "content": article["content"] # Optional
                     }
                 })
 

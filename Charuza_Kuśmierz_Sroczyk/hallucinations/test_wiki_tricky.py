@@ -6,7 +6,6 @@ import sys
 from tqdm import tqdm
 import math
 
-# Add project root to path to allow imports from other modules
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from models import LLMFactory
 
@@ -30,10 +29,9 @@ def get_random_page_content():
         if not content_div:
             return title, response.url, ""
         
-        # Limit text length to avoid token limits while keeping enough context for a trick
         paragraphs = content_div.find_all('p')
         text_content = "\n\n".join([p.get_text() for p in paragraphs if p.get_text(strip=True)])
-        return title, response.url, text_content[:5000] # Truncate to first ~5k chars
+        return title, response.url, text_content[:5000]
 
     except requests.exceptions.RequestException as e:
         print(f"Error fetching page: {e}")
@@ -72,7 +70,6 @@ Each object must have:
 
     try:
         response_text = model.generate(prompt)
-        # Robust JSON extraction
         start_idx = response_text.find('{')
         end_idx = response_text.rfind('}') + 1
         if start_idx == -1 or end_idx == 0:
@@ -83,13 +80,12 @@ Each object must have:
         return data.get("qa_pairs", [])
     except Exception as e:
         print(f"\nError processing batch: {e}")
-        # Return empty placeholders to maintain index alignment
         return [{"question": "Error generating", "answer": "Error", "trick_type": "Error"}] * len(articles_batch)
 
 def main():
     # --- Configuration ---
-    N_ARTICLES = 100        # Total articles to process
-    BATCH_SIZE = 5         # Process 5 articles at a time to improve quality
+    N_ARTICLES = 400
+    BATCH_SIZE = 5
     MODEL_NAME = "gpt-5-mini"
     OUTPUT_FILE = "wiki_questions_tricky.json"
     # ---------------------
@@ -97,11 +93,10 @@ def main():
     print(f"Fetching {N_ARTICLES} random Wikipedia articles...")
     articles = []
     
-    # Fetch articles first
     with tqdm(total=N_ARTICLES, desc="Fetching Content") as pbar:
         while len(articles) < N_ARTICLES:
             title, url, content = get_random_page_content()
-            if title and content and len(content) > 500: # Ensure article has enough meat
+            if title and content and len(content) > 500:
                 articles.append({"title": title, "url": url, "content": content})
                 pbar.update(1)
 
@@ -116,7 +111,6 @@ def main():
     
     all_results = []
     
-    # Process in batches
     num_batches = math.ceil(len(articles) / BATCH_SIZE)
     
     prompts = []
@@ -156,13 +150,11 @@ Each object must have:
     batch_responses = model.generate_batch(prompts)
 
     for i, response_text in enumerate(batch_responses):
-        # Get slice of articles
         start_idx = i * BATCH_SIZE
         end_idx = start_idx + BATCH_SIZE
         batch = articles[start_idx:end_idx]
         
         try:
-            # Robust JSON extraction
             start_json_idx = response_text.find('{')
             end_json_idx = response_text.rfind('}') + 1
             if start_json_idx == -1 or end_json_idx == 0:
@@ -175,9 +167,8 @@ Each object must have:
             print(f"\nError processing batch response: {e}")
             qa_batch = [{"question": "Error generating", "answer": "Error", "trick_type": "Error"}] * len(batch)
 
-        # Align results with source articles
         for j, qa in enumerate(qa_batch):
-            if j < len(batch): # Safety check
+            if j < len(batch):
                 article = batch[j]
                 all_results.append({
                     "id": f"wiki-tricky-{start_idx + j + 1}",
@@ -188,11 +179,9 @@ Each object must have:
                     "source_article": {
                         "title": article["title"],
                         "url": article["url"],
-                        # "content": article["content"] # Optional: exclude full content to save space
                     }
                 })
 
-    # Save to file
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump({"results": all_results}, f, indent=2, ensure_ascii=False)
 

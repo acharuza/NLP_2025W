@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import List
+from typing import List, Optional
 from .schemas import JudgeResult
 import concurrent.futures
 from tqdm import tqdm
@@ -9,13 +9,14 @@ class Judge(ABC):
     """Abstract judge interface.
 
     Contract:
-    - compare(answer_a, answer_b, prompt): returns a boolean indicating equivalence.
+    - compare(answer_a, answer_b, prompt): returns Optional[int] indicating equivalence (1),
+      mismatch (0), refusal (2), or error (None).
     - compare_batch(answers_a, answers_b, prompts): returns a `JudgeResult` which is a list of
-      booleans (one per pair) indicating equivalence, processed in parallel.
+      Optional[int] (one per pair), processed in parallel.
     """
 
     @abstractmethod
-    def compare(self, answer_a: str, answer_b: str, prompt: str) -> bool:
+    def compare(self, answer_a: str, answer_b: str, prompt: str) -> Optional[int]:
         pass
 
     def compare_batch(self, answers_a: List[str], answers_b: List[str], prompts: List[str]) -> JudgeResult:
@@ -26,7 +27,7 @@ class Judge(ABC):
             return JudgeResult(scores=[])
 
         max_workers = min(32, len(prompts))
-        scores: List[bool] = [False] * len(prompts)
+        scores: List[Optional[int]] = [None] * len(prompts)
 
         with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
             future_to_index = {
@@ -39,6 +40,6 @@ class Judge(ABC):
                 try:
                     scores[index] = future.result()
                 except Exception:
-                    scores[index] = False  # Default to False on error
+                    scores[index] = None
 
         return JudgeResult(scores=scores)
