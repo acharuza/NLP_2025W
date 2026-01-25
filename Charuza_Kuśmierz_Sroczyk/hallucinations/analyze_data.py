@@ -8,6 +8,11 @@ INPUT_FILE = 'gpt-5-mini-wikipedia_dataset2_evaluation.json'
 OUT_IMG_1 = 'gpt-5-mini_wiki2_accuracy_by_category.png'
 OUT_IMG_2 = 'gpt-5-mini_wiki2_length_vs_score.png'
 
+'''
+INPUT_FILE = 'gpt-5-wikipedia_dataset2_evaluation.json'
+OUT_IMG_1 = 'gpt-5_wiki2_accuracy_by_category.png'
+OUT_IMG_2 = 'gpt-5_wiki2_length_vs_score.png'
+
 INPUT_FILE = 'llama_evaluation.json'
 OUT_IMG_1 = 'llama_wiki2_accuracy_by_category.png'
 OUT_IMG_2 = 'llama_wiki2_length_vs_score.png'
@@ -19,6 +24,7 @@ OUT_IMG_2 = 'mistral_wiki2_length_vs_score.png'
 INPUT_FILE = 'llava_evaluation.json'
 OUT_IMG_1 = 'llava_wiki2_accuracy_by_category.png'
 OUT_IMG_2 = 'llava_wiki2_length_vs_score.png'
+'''
 
 PLOT_STYLE = 'whitegrid'
 FIG_SIZE = (12, 6)
